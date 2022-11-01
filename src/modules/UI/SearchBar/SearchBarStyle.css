@@ -1,0 +1,35 @@
+.search-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .searchBar{
+    width: 250px;
+    height: 30px;
+    border: 2px solid rgb(129, 74, 135);
+    border-radius: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .searchBar > input{
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+  ::placeholder {
+      color: rgb(129, 74, 135);
+      font-weight: bold;
+  }
+  .searchBar > button{
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .searchBar > button > img{
+      width: 15px;
+      height: 15px;
+      border: none;
+  }

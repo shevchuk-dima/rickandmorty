@@ -1,0 +1,35 @@
+.add-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-top: 15px;
+    width: 230px;
+    height: 300px;
+    margin-bottom: 20px;
+    border: 3px solid rgb(133, 117, 136);
+    border-radius: 10px 10px 10px 10px;
+}
+.btn-add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 3px solid rgb(133, 117, 136);
+    color: rgb(133, 117, 136);
+    font-size: 8rem;
+    font-weight: 600;
+}
+.btn-add:hover{
+    border: 3px solid rgb(127, 92, 134);
+    color: rgb(127, 92, 134);
+}
+.add-card span{
+    color: rgb(133, 117, 136);
+    font-size: 2rem;
+    font-weight: 600;
+}
