@@ -35,10 +35,19 @@
     border: 1px solid black;
     width: 80%;
     height: 150px;
+    display: flex;
+    justify-content: center;
 }
-
+.pages-pagination{
+    margin-top: 15px;
+    padding-top: 15px;
+}
 .page{
-    padding-right: 2px;
+    text-align: center;
+    user-select: none;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
     border: 1px solid black;
     cursor: pointer;
 }
