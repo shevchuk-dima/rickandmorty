@@ -13,19 +13,19 @@ const CardModal = (props) => {
       onClick = {()=>setActiveCardModal(false)}
     >
       <div className="card-modal" onClick={e=>e.stopPropagation()}>
+      <div className="img">
+          <img src={curCard.image} />
+        </div>
         <div className="info">
           <div className="info-wrapper"> 
-            <p>Name: {curCard.name}</p>
-            <p>Status: {curCard.status}</p>
-            <p>Species: {curCard.species}</p>
-            <p>Type: {curCard.type}</p>
-            <p>Gender: {curCard.gender}</p>
-            <p>Location name: {curCard.location === undefined ? "" : curCard.location.name}</p>
-            <p>Origin name: {curCard.origin === undefined ? "" : curCard.origin.name}</p>
+            <p><span className="title-card">Name: </span>{curCard.name}</p>
+            <p><span className="title-card">Status: </span> {curCard.status}</p>
+            <p><span className="title-card">Species: </span> {curCard.species}</p>
+            <p><span className="title-card">Type: </span> {curCard.type}</p>
+            <p><span className="title-card">Gender: </span> {curCard.gender}</p>
+            <p><span className="title-card">Location name: </span> {curCard.location === undefined ? "" : curCard.location.name}</p>
+            <p><span className="title-card">Origin name: </span> {curCard.origin === undefined ? "" : curCard.origin.name}</p>
           </div>
-        </div>
-        <div className="img">
-          <img src={curCard.image} />
         </div>
       </div>
     </div>

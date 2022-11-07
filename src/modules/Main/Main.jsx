@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import CardModal from "./Card/CardModal/CardModal";
 import ContentTab from "./ContentTab/ContentTab";
 import CardsService from "../../API/CardsService";
+import Pagintaion from "../UI/Pagination/Pagintaion";
 
 function Main(props) {
   const [cards, setCards] = useState([]);
@@ -16,13 +17,6 @@ function Main(props) {
   const [curCard, setCurCard] = useState({});
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [prevPage, setPrevPage] = useState(0);
-  const [nextPage, setNextPage] = useState(10);
-  let arrPages = [];
-
-  for (let i = 1; i <= totalPages; i++) {
-    arrPages.push(i);
-  }
 
   useEffect(() => {
     props.setHeader("Main");
@@ -88,21 +82,6 @@ function Main(props) {
     setCurrentPage(numberPage);
   }
 
-  
-  function handlerSetNextPage() {
-    if((nextPage - 1)  < totalPages){
-      setNextPage(nextPage + 10);
-      setPrevPage(prevPage + 10);
-    }
-  }
-  
-  function handlerSetPrevPage() {
-    if(prevPage - 1  >= 1){
-      setNextPage(nextPage - 10);
-      setPrevPage(prevPage - 10);
-    }
-  }
-
   return (
     <div>
       <SearchBar
@@ -131,23 +110,11 @@ function Main(props) {
         />
         <FilterTabMain sort={Sort} />
       </div>
-
-      <div className="pages-wrapper">
-        <div className="pages-pagination">
-          <div className="page" onClick={handlerSetPrevPage}>&lt;</div>
-          {arrPages.filter(item => item > prevPage && item < nextPage)
-          .map((item) => (
-            <div
-              id={item}
-              onClick={(e) => handlerSetCurrentPage(e.target.id)}
-              className={item == currentPage ? "page page-current" : "page"}
-            >
-              {item}
-            </div>
-          ))}
-          <div className="page" onClick={handlerSetNextPage}>&gt;</div>
-        </div>
-      </div>
+      <Pagintaion
+        totalPages={totalPages}
+        handlerSetCurrentPage={handlerSetCurrentPage}
+        currentPage = {currentPage}
+      />
     </div>
   );
 }

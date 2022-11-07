@@ -9,7 +9,7 @@ function Header(props) {
           </div>
          <div className='header-pages'>
              <div className="header-page">
-                  <Link to="/">Main</Link>
+                  <Link to="/rickandmorty">Main</Link>
             </div>
                <div className="header-page">
                <Link to="/about">About us</Link>

@@ -19,7 +19,7 @@ function App() {
       <Header headerName={currHeader} />
       <Routes>
         <Route
-          path="/"
+          path="/rickandmorty"
           element={
             <Main
               setHeader={setHeader}
